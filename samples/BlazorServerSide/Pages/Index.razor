@@ -1,0 +1,120 @@
+﻿@page "/"
+@using BlazorServerSide.Models;
+@using Blazored.TextEditor
+@inject BlazorServerSide.Data.EmailDbContext _context
+@inject IJSRuntime JSRuntime
+
+<select @ref="myselect" Id="myselect" class="form-control"
+        @onchange="selectedValue">
+    <option selected value="-1">@MessageObject.Name</option>
+    @foreach (var item in ComboBoxNew)
+    {
+        <option value="@item.Name">@item.Templates</option>
+
+    }
+</select>
+
+
+<BlazoredTextEditor @ref="@QuillHtml">
+    <ToolbarContent>
+        <select class="ql-header">
+            <option selected=""></option>
+            <option value="1"></option>
+            <option value="2"></option>
+            <option value="3"></option>
+            <option value="4"></option>
+            <option value="5"></option>
+        </select>
+        <span class="ql-formats">
+            <button class="ql-bold"></button>
+            <button class="ql-italic"></button>
+            <button class="ql-underline"></button>
+            <button class="ql-strike"></button>
+        </span>
+        <span class="ql-formats">
+            <select class="ql-color"></select>
+            <select class="ql-background"></select>
+        </span>
+        <span class="ql-formats">
+            <button class="ql-list" value="ordered"></button>
+            <button class="ql-list" value="bullet"></button>
+        </span>
+        <span class="ql-formats">
+            <button class="ql-link"></button>
+        </span>
+    </ToolbarContent>
+    <EditorContent>
+        <p>@MessageObject.Templates</p>
+    </EditorContent>
+</BlazoredTextEditor>
+<br />
+<button class="btn btn-primary"
+        @onclick="SaveToDB">
+    Save To Database
+</button>
+<button class="btn btn-primary"
+        @onclick="GetFromDB">
+    Get From Database Recent Message
+</button>
+<br />
+<div>
+    <br />
+    @((MarkupString)QuillHTMLContent)
+    @QuillHTMLContent
+</div>
+<br />
+
+@code {
+    BlazoredTextEditor QuillHtml;
+    BlazoredTextEditor QuillNative;
+    BlazoredTextEditor QuillReadOnly;
+    EmailDto MessageObject = new EmailDto();
+
+    string QuillHTMLContent;
+    string QuillContent;
+    string QuillReadOnlyContent = 
+        @"<span><b>Read Only</b> <u>Content</u></span>";
+
+    bool mode = false;
+
+    public async void SaveToDB()
+    {
+        EmailDto MessageObject = new EmailDto();
+
+        QuillHTMLContent = await this.QuillHtml.GetHTML();
+        MessageObject.Templates = QuillHTMLContent.ToString();
+        _context.Templates.Add(MessageObject);
+        await _context.SaveChangesAsync();
+        StateHasChanged();
+    }
+
+    public async void GetFromDB()
+    {
+        EmailDto MessageObject = new EmailDto();
+        MessageObject = _context.Templates.OrderByDescending(x => x.Id).FirstOrDefault();
+        string QuillContent = $@"{MessageObject.Templates}";
+        await this.QuillHtml.LoadHTMLContent(QuillContent);
+        StateHasChanged();
+    }
+
+    private ElementReference myselect;
+
+    protected override async Task OnInitializedAsync()
+    {
+        ComboBoxNew = _context.Templates.ToList();
+        await base.OnInitializedAsync();
+    }
+
+    public List<EmailDto> ComboBoxNew = new List<EmailDto>();
+
+    public async void selectedValue(ChangeEventArgs args)
+    {
+        MessageObject.Name = args.Value.ToString();
+        string QuillContent = $@"{MessageObject.Name}";
+        await this.QuillHtml.LoadHTMLContent(QuillContent);
+        StateHasChanged();
+    }
+    
+}
+
+
