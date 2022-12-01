@@ -25,14 +25,14 @@ namespace BlazorServerSide.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Name")
+                    b.Property<string>("TemplateContext")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Status")
+                    b.Property<string>("TemplateName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("TemplateStatus")
                         .HasColumnType("int");
-
-                    b.Property<string>("Templates")
-                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 

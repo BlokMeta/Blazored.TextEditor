@@ -1,6 +1,5 @@
 ﻿using BlazorServerSide.Models;
 using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
 
 namespace BlazorServerSide.Data
 {

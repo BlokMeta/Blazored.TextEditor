@@ -4,11 +4,11 @@
     {
         public int Id { get; set; }
 
-        public string Templates { get; set; }
+        public string TemplateContext { get; set; }
 
-        public string Name { get; set; }
+        public string TemplateName { get; set; }
 
-        public int Status { get; set; }
+        public int TemplateStatus { get; set; }
 
 
     }

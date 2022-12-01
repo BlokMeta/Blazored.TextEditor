@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ErrorMessageFooter" xml:space="preserve">
+    <value>&lt;tr id="m_6364587510727842495section_5"&gt;&lt;td class="m_6364587510727842495blk_container m_6364587510727842495bmeHolder" name="bmeFooter" align="center" valign="top" width="100%" bgcolor="#ffffff" style="background-color:rgb(255,255,255);color:rgb(102,102,102)"&gt;&lt;div id="m_6364587510727842495dv_10"&gt;    
+    &lt;table width="600" cellspacing="0" cellpadding="0" border="0" class="m_6364587510727842495blk" name="blk_button"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td width="20"&gt;&lt;/td&gt;&lt;td align="center"&gt;    
+    &lt;table class="m_6364587510727842495tblContainer" cellspacing="0" cellpadding="0" border="0" width="100%"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td height="10"&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align="center"&gt;    
+    &lt;table cellspacing="0" cellpadding="0" border="0" align="center" style="border-collapse:separate"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td style="border-radius:30px;border-width:0px;border-style:none;border-color:transparent;background-color:rgb(228,64,95);text-align:center;font-family:Arial,Helvetica,sans-serif;font-size:14px;padding:15px 40px;font-weight:bold;word-break:break-word"&gt;&lt;span style="font-family:Arial,Verdana;font-size:14px;color:#ffffff"&gt;&lt;a style="color:#ffffff;text-decoration:none" href="mailto:hello@redmillsolutions.com" target="_blank"&gt;Contact&lt;/a&gt;&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;    
+    &lt;/table&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td height="10"&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;    
+    &lt;/table&gt;&lt;/td&gt;&lt;td width="20"&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;    
+    &lt;/table&gt;&lt;/div&gt;&lt;div id="m_6364587510727842495dv_7"&gt;    
+    &lt;table width="600" cellspacing="0" cellpadding="0" border="0" class="m_6364587510727842495blk" name="blk_social_follow"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td align="center" style="padding-top:10px;padding-bottom:10px;padding-left:20px;padding-right:20px"&gt;    
+    &lt;table class="m_6364587510727842495tblContainer m_6364587510727842495mblSocialContain" cellspacing="0" cellpadding="0" border="0" align="center" style="text-align:center"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;    
+    &lt;table cellspacing="0" cellpadding="0" border="0" class="m_6364587510727842495mblSocialContain" style="table-layout:auto"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td valign="top" name="bmeSocialTD"&gt;    
+    &lt;table cellspacing="0" cellpadding="0" border="0" class="m_6364587510727842495bmeFollowItem" type="facebook" style="float:left;display:block" align="left"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td align="left" class="m_6364587510727842495bmeFollowItemIcon" width="24" style="padding-right:10px;height:20px"&gt;&lt;a href="https://clt.benchmarkurl.com/c/l?u=E9EF01C&amp;amp;e=154B0DA&amp;amp;c=170BFA&amp;amp;t=1&amp;amp;l=93F7D696&amp;amp;email=OLi1CCWoPjWJMyK1NJ3TbJemkgBQcCdv&amp;amp;seq=1" style="display:inline-block;background-color:rgb(53,91,161);border-radius:28px;border-style:none;border-width:0px;border-color:rgb(0,0,238)" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://clt.benchmarkurl.com/c/l?u%3DE9EF01C%26e%3D154B0DA%26c%3D170BFA%26t%3D1%26l%3D93F7D696%26email%3DOLi1CCWoPjWJMyK1NJ3TbJemkgBQcCdv%26seq%3D1&amp;amp;source=gmail&amp;amp;ust=1668685500585000&amp;amp;usg=AOvVaw17RTX8MyNiZyd7bukv2V6M"&gt;&lt;img src="https://ci3.googleusercontent.com/proxy/oSvJr_csjyA4qkKLUAEoWPFPtZUVnUl15-S05Z7A40hnZev8LEhE4QsoOvlgVL9MKxEnDjY0pctMczEl7bxl94S9wY997h2dPcg9tQxh8zvjUB53kA=s0-d-e1-ft#https://ui.benchmarkemail.com/images/editor/socialicons/fb_btn.png" alt="Facebook" style="display:block;max-width:24px" border="0" width="24" height="24" class="CToWUd" data-bit="iit"&gt;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;    
+    &lt;/table&gt;    
+    &lt;table cellspacing="0" cellpadding="0" border="0" class="m_6364587510727842495bmeFollowItem" type="twitter" style="float:left;display:block" align="left"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td align="left" class="m_6364587510727842495bmeFollowItemIcon" width="24" style="padding-right:10px;height:20px"&gt;&lt;a href="https://clt.benchmarkurl.com/c/l?u=E9EF01D&amp;amp;e=154B0DA&amp;amp;c=170BFA&amp;amp;t=1&amp;amp;l=93F7D696&amp;amp;email=OLi1CCWoPjWJMyK1NJ3TbJemkgBQcCdv&amp;amp;seq=1" style="display:inline-block;background-color:rgb(50,203,255);border-radius:28px;border-style:none;border-width:0px;border-color:rgb(0,0,238)" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://clt.benchmarkurl.com/c/l?u%3DE9EF01D%26e%3D154B0DA%26c%3D170BFA%26t%3D1%26l%3D93F7D696%26email%3DOLi1CCWoPjWJMyK1NJ3TbJemkgBQcCdv%26seq%3D1&amp;amp;source=gmail&amp;amp;ust=1668685500585000&amp;amp;usg=AOvVaw0GKoqzSkfWma-OKMM_YPKQ"&gt;&lt;img src="https://ci6.googleusercontent.com/proxy/YWelqrE-lV4XbuzHWAJ9uJYfFVQTnqEE12GE0lSOUQ2qMKYXKFzIUdMK4oIwmebxj_EnYOu5QpTq24fA8DGsESX_S2r7PChTIasOOVt_NgN9wDQpLg=s0-d-e1-ft#https://ui.benchmarkemail.com/images/editor/socialicons/tw_btn.png" alt="Twitter" style="display:block;max-width:24px" border="0" width="24" height="24" class="CToWUd" data-bit="iit"&gt;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;    
+    &lt;/table&gt;    
+    &lt;table cellspacing="0" cellpadding="0" border="0" class="m_6364587510727842495bmeFollowItem" type="instagram" style="float:left;display:block" align="left"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td align="left" class="m_6364587510727842495bmeFollowItemIcon" width="24" style="padding-right:10px;height:20px"&gt;&lt;a href="https://clt.benchmarkurl.com/c/l?u=E9EF01E&amp;amp;e=154B0DA&amp;amp;c=170BFA&amp;amp;t=1&amp;amp;l=93F7D696&amp;amp;email=OLi1CCWoPjWJMyK1NJ3TbJemkgBQcCdv&amp;amp;seq=1" style="display:inline-block;background-color:rgb(228,64,95);border-radius:28px;border-style:none;border-width:0px;border-color:rgb(0,0,238)" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://clt.benchmarkurl.com/c/l?u%3DE9EF01E%26e%3D154B0DA%26c%3D170BFA%26t%3D1%26l%3D93F7D696%26email%3DOLi1CCWoPjWJMyK1NJ3TbJemkgBQcCdv%26seq%3D1&amp;amp;source=gmail&amp;amp;ust=1668685500586000&amp;amp;usg=AOvVaw2RzzOSTZsccADxBs6i8co4"&gt;&lt;img src="https://ci4.googleusercontent.com/proxy/87MmcrcUdRG6nOZCy9zALvuB4s70kCtOif9xSrWs9PUtp4W53gUCV9WAKmR5ddFTtGg5ydlinkGehYKbYanNxLAcZTa5eVbh-zYajYbXuzjIgT546A=s0-d-e1-ft#https://ui.benchmarkemail.com/images/editor/socialicons/in_btn.png" alt="Instagram" style="display:block;max-width:24px" border="0" width="24" height="24" class="CToWUd" data-bit="iit"&gt;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;    
+    &lt;/table&gt;    
+    &lt;table cellspacing="0" cellpadding="0" border="0" class="m_6364587510727842495bmeFollowItem" type="website" style="float:left;display:block" align="left"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td align="left" class="m_6364587510727842495bmeFollowItemIcon" width="24" style="height:20px"&gt;&lt;a href="#m_6364587510727842495_" style="display:inline-block;background-color:rgb(255,165,0);border-radius:28px;border-style:none;border-width:0px;border-color:rgb(0,0,238)"&gt;&lt;img src="https://ci3.googleusercontent.com/proxy/oT5IQUb-sdivyxfMZdazfrCEHFRl_o6ziSVCRvFiK5ELzaA4l0tCXtMLS3ZpmirNtUoO_9bvNwbuW7DXP7zCakq4YLtclnKIcka2egMAGh2NR1HDRg=s0-d-e1-ft#https://ui.benchmarkemail.com/images/editor/socialicons/wb_btn.png" alt="Website" style="display:block;max-width:24px" border="0" width="24" height="24" class="CToWUd" data-bit="iit"&gt;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;    
+    &lt;/table&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;    
+    &lt;/table&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;    
+    &lt;/table&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;    
+    &lt;/table&gt;&lt;/div&gt;&lt;div id="m_6364587510727842495dv_12"&gt;    
+    &lt;table width="600" cellspacing="0" cellpadding="0" border="0" class="m_6364587510727842495blk" name="blk_image"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;    
+    &lt;table width="100%" cellspacing="0" cellpadding="0" border="0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td align="left" style="border-collapse:collapse;padding-left:20px;padding-right:20px;padding-top:20px;padding-bottom:20px"&gt;&lt;img src="https://ci3.googleusercontent.com/proxy/28CpyBhr2zzLQ27dl4jSrL4VhgFZslA3Fni9wdnWn9Dbm5c0GNKn7FbEVwW_lRzMGIBOAr6tBhL0N3MD70lDXaFd2-V6EARYI7jz70tgxvsrw0EN=s0-d-e1-ft#https://images.benchmarkemail.com/client1510394/image13110391.png" width="156.8" style="max-width:156.8px;display:block;border-radius:0px" alt="" border="0" class="CToWUd" data-bit="iit"&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;    
+    &lt;/table&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;    
+    &lt;/table&gt;&lt;/div&gt;&lt;div id="m_6364587510727842495dv_11"&gt;    
+    &lt;table width="600" cellspacing="0" cellpadding="0" border="0" class="m_6364587510727842495blk" name="blk_text"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;    
+    &lt;table cellpadding="0" cellspacing="0" border="0" width="100%"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;th class="m_6364587510727842495tdPart" valign="top" align="center"&gt;    
+    &lt;table cellspacing="0" cellpadding="0" border="0" width="600" name="tblText" class="m_6364587510727842495tblText" style="float:left;background-color:transparent" align="left"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td valign="top" align="left" name="tblCell" class="m_6364587510727842495tblCell" style="padding:10px 20px;font-family:Arial,Helvetica,sans-serif;font-size:14px;font-weight:400;color:rgb(56,56,56);text-align:left;word-break:break-word"&gt;&lt;div style="line-height:150%;text-align:justify"&gt;&lt;span style="font-size:10px"&gt;&lt;strong&gt;&lt;span style="text-decoration:underline"&gt;Statement of Confidentiality&lt;/span&gt;&lt;/strong&gt;&lt;/span&gt;&lt;/div&gt;
+    &lt;div style="line-height:150%;text-align:justify"&gt;&lt;span style="font-size:10px"&gt;This email and attachments may contain information that is confidential, legally privileged or otherwise protected from disclosure. This transmission is sent in trust, for the sole purpose of delivery to the intended recipient. If you have received this email in error, you are not entitled to copy, disclose, distribute, print, or rely on this email in any way. If you are not the intended recipient, please immediately notify the sender by reply e-mail or phone and delete this email and its attachments (if any) from your system. Redmill Solutions Limited is a private limited company, registered in England and Wales, with the registration number 07193163 and its registered office located at Calleo House, 49 Theobald Street, Borehamwood, WD6 4RT.&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;    
+    &lt;/table&gt;&lt;/th&gt;&lt;/tr&gt;&lt;/tbody&gt;    
+    &lt;/table&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;    
+    &lt;/table&gt;&lt;/div&gt;&lt;div id="m_6364587510727842495dv_6"&gt;</value>
+  </data>
+  <data name="ErrorMessageHeader" xml:space="preserve">
+    <value>&lt;div id="m_-1521676202543282207dv_2"&gt;    
+&lt;table class="m_-1521676202543282207blk" name="blk_text" width="600" border="0" cellpadding="0" cellspacing="0"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;    
+&lt;table cellpadding="0" cellspacing="0" border="0" width="100%"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;th valign="top" align="center" class="m_-1521676202543282207tdPart" style="background-color:rgba(0,0,0,0)"&gt;    
+&lt;table name="tblText" style="float:left;background-color:rgba(0,0,0,0)" align="left" border="0" cellpadding="0" cellspacing="0" class="m_-1521676202543282207tblText" width="600"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td name="tblCell" style="padding:15px 20px;font-size:14px;font-weight:400;font-family:Arial,Helvetica,sans-serif;color:rgb(56,56,56);text-align:left;word-break:break-word" align="left" valign="top" class="m_-1521676202543282207tblCell"&gt;&lt;div style="line-height:200%"&gt;&lt;span style="font-family:Tahoma,Verdana,Segoe,Geneva,sans-serif"&gt;&lt;strong&gt;Message Not Delivered!&lt;/strong&gt;&lt;/span&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;    
+&lt;/table&gt;&lt;/th&gt;&lt;/tr&gt;&lt;/tbody&gt;    
+&lt;/table&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;    
+&lt;/table&gt;&lt;/div&gt;</value>
+  </data>
+</root>

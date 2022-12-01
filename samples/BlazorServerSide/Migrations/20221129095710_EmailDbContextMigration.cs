@@ -2,7 +2,7 @@
 
 namespace BlazorServerSide.Migrations
 {
-    public partial class EmailTemplates : Migration
+    public partial class EmailDbContextMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -12,9 +12,9 @@ namespace BlazorServerSide.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Templates = table.Column<string>(nullable: true),
-                    Name = table.Column<string>(nullable: true),
-                    Status = table.Column<int>(nullable: false)
+                    TemplateContext = table.Column<string>(nullable: true),
+                    TemplateName = table.Column<string>(nullable: true),
+                    TemplateStatus = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
