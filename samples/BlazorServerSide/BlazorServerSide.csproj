@@ -5,16 +5,50 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20221123090512_EmailTemplates.cs" />
+    <Compile Remove="Migrations\20221123090512_EmailTemplates.Designer.cs" />
+    <Compile Remove="Migrations\20221129092521_EmailMessageDbContext.cs" />
+    <Compile Remove="Migrations\20221129092521_EmailMessageDbContext.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Pages\Counter.razor" />
+    <Content Remove="Pages\Error.razor" />
+    <Content Remove="Shared\Component.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.31" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.31" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.31">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
+    <PackageReference Include="System.Linq" Version="4.3.0" />
+    <PackageReference Include="System.Linq.Expressions" Version="4.3.0" />
+    <PackageReference Include="System.Linq.Queryable" Version="4.3.0" />
+    <PackageReference Include="System.Text.Json" Version="7.0.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\Blazored.TextEditor\Blazored.TextEditor.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Resources\ErrorMessageHeadandFooter.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ErrorMessageHeadandFooter.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Resources\ErrorMessageHeadandFooter.resx">
+      <CustomToolNamespace>HeadAndFooter</CustomToolNamespace>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ErrorMessageHeadandFooter.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
 
 </Project>
