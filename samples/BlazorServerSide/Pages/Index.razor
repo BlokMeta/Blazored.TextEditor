@@ -17,9 +17,8 @@
             Delete From Database
         </button><br /><br />
 
-        <select @ref="myselect" class="form-control" style="width:800px"
+        <select @ref="myselect" class="form-control"
                 @onchange="selectedValue">
-
             <option value="" disabled selected hidden>Please Select Error Message Type!</option>
             @foreach (var item in comboBox)
             {
@@ -59,14 +58,18 @@
             <EditorContent>
             </EditorContent>
         </BlazoredTextEditor>
+        <div style="color:darkred" ><br />
+            <p>Selected Items: [From],[FileName],[errorLine]</p>
+        </div>
     </div>
-    <div class="column" style="width:800px">
+    <div class="column">
         <div>
-            @((MarkupString)HeadAndFooter.ErrorMessageHeadandFooter.ErrorMessageHeader)
-            <div class="quillcontent" style="padding-left:50px">
+            <br /><br />
+            @((MarkupString)mailHeader)
+            <div class="quillcontent" style="padding-left:30px">
                 @((MarkupString)QuillHTMLContent)
             </div>
-            @((MarkupString)HeadAndFooter.ErrorMessageHeadandFooter.ErrorMessageFooter)
+            @((MarkupString)mailFooter)
         </div>
     </div>
 </div>
@@ -83,22 +86,16 @@
         @"<span><b>Read Only</b> <u>Content</u></span>";
     bool mode = false;
     int templateId;
+    string mailHeader = HeadAndFooter.ErrorMessageHeadandFooter.ErrorMessageHeader;
+    string mailFooter = HeadAndFooter.ErrorMessageHeadandFooter.ErrorMessageFooter;
 
     public async void SaveToDB()
     {
-        if (_emailDto.TemplateContext == null || _emailDto.TemplateContext == " ")
-        {
-            await JSRuntime.InvokeVoidAsync("alert", "Wrong entry! You can't save witouth choosing a Error Message type. Please then fill the text area.");
-            _emailDto.TemplateContext = " ";
-        }
-        else
-        {
-            QuillHTMLContent = await this.QuillHtml.GetHTML();
-            _emailDto = _dbContext.Templates.FirstOrDefault(x => x.Id == templateId);
-            _emailDto.TemplateContext = QuillHTMLContent.ToString();
-            await _dbContext.SaveChangesAsync();
-            StateHasChanged();
-        }
+        QuillHTMLContent = await this.QuillHtml.GetHTML();
+        _emailDto = _dbContext.Templates.FirstOrDefault(x => x.Id == templateId);
+        _emailDto.TemplateContext = QuillHTMLContent.ToString();
+        await _dbContext.SaveChangesAsync();
+        StateHasChanged();
     }
 
     protected override async Task OnInitializedAsync()
@@ -110,7 +107,7 @@
     public async void selectedValue(ChangeEventArgs args)
     {
         templateId = Convert.ToInt32(args.Value.ToString());
-        _emailDto = _dbContext.Templates.FirstOrDefault(x => x.Id == Convert.ToInt32(args.Value.ToString()));
+        _emailDto = _dbContext.Templates.FirstOrDefault(x => x.Id == templateId);
         string QuillContent = $@"{_emailDto.TemplateContext}";
         await this.QuillHtml.LoadHTMLContent(QuillContent);
         StateHasChanged();
