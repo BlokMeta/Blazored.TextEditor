@@ -1,24 +1,13 @@
 ﻿@page "/"
 @using BlazorServerSide.Models;
 @using Blazored.TextEditor
-@inject BlazorServerSide.Data.EmailDbContext _context
-@inject BlazorServerSide.Models.EmailDto _messageObject
+@inject BlazorServerSide.Data.EmailDbContext _dbContext
+@inject BlazorServerSide.Models.EmailDto _emailDto
 @inject IJSRuntime JSRuntime
 
-
-<div class="split left">
-    <div class="centered">
-        <select @ref="myselect" class="form-control"
-                @onchange="selectedValue">
-
-            <option value="" disabled selected hidden>Please Select Error Message Type!</option>
-            @foreach (var item in ComboBoxNew)
-            {
-                <option value="@item.Id">@item.TemplateName</option>
-            }
-
-        </select><br />
-
+<div class="row">
+    <div class="column">
+        <br />
         <button class="btn btn-success"
                 @onclick="SaveToDB">
             Save To Database
@@ -26,11 +15,17 @@
         <button class="btn btn-danger"
                 @onclick="DeleteFromDb">
             Delete From Database
-        </button>
-        <button class="btn btn-danger"
-                @onclick="AddToDB">
-            Add To Database
-        </button><br />
+        </button><br /><br />
+
+        <select @ref="myselect" class="form-control" style="width:800px"
+                @onchange="selectedValue">
+
+            <option value="" disabled selected hidden>Please Select Error Message Type!</option>
+            @foreach (var item in comboBox)
+            {
+                <option value="@item.Id">@item.TemplateName</option>
+            }
+        </select><br />
 
         <BlazoredTextEditor @ref="@QuillHtml">
             <ToolbarContent>
@@ -62,18 +57,17 @@
 
             </ToolbarContent>
             <EditorContent>
-
             </EditorContent>
         </BlazoredTextEditor>
     </div>
-</div>
-
-<div class="split right">
-    <div class="centered">
-        @((MarkupString)HeadAndFooter.ErrorMessageHeadandFooter.ErrorMessageHeader)
-        @((MarkupString)QuillHTMLContent)
-        @QuillHTMLContent
-        @((MarkupString)HeadAndFooter.ErrorMessageHeadandFooter.ErrorMessageFooter)
+    <div class="column" style="width:800px">
+        <div>
+            @((MarkupString)HeadAndFooter.ErrorMessageHeadandFooter.ErrorMessageHeader)
+            <div class="quillcontent" style="padding-left:50px">
+                @((MarkupString)QuillHTMLContent)
+            </div>
+            @((MarkupString)HeadAndFooter.ErrorMessageHeadandFooter.ErrorMessageFooter)
+        </div>
     </div>
 </div>
 
@@ -81,10 +75,9 @@
     BlazoredTextEditor QuillHtml;
     BlazoredTextEditor QuillNative;
     BlazoredTextEditor QuillReadOnly;
-    List<EmailDto> ComboBoxNew = new List<EmailDto>() { };
+    List<EmailDto> comboBox = new List<EmailDto>() { };
     private ElementReference myselect;
     string QuillHTMLContent;
-    string ComboBoxId;
     string QuillContent;
     string QuillReadOnlyContent = 
         @"<span><b>Read Only</b> <u>Content</u></span>";
@@ -93,54 +86,40 @@
 
     public async void SaveToDB()
     {
-        QuillHTMLContent = await this.QuillHtml.GetHTML();
-        _messageObject = _context.Templates.FirstOrDefault(x => x.Id == templateId);
-        _messageObject.TemplateContext = QuillHTMLContent.ToString();
-        await _context.SaveChangesAsync();
-        StateHasChanged();
+        if (_emailDto.TemplateContext == null || _emailDto.TemplateContext == " ")
+        {
+            await JSRuntime.InvokeVoidAsync("alert", "Wrong entry! You can't save witouth choosing a Error Message type. Please then fill the text area.");
+            _emailDto.TemplateContext = " ";
+        }
+        else
+        {
+            QuillHTMLContent = await this.QuillHtml.GetHTML();
+            _emailDto = _dbContext.Templates.FirstOrDefault(x => x.Id == templateId);
+            _emailDto.TemplateContext = QuillHTMLContent.ToString();
+            await _dbContext.SaveChangesAsync();
+            StateHasChanged();
+        }
     }
-
-    public async void AddToDB()
-    {
-        QuillHTMLContent = await this.QuillHtml.GetHTML();
-        _messageObject = _context.Templates.FirstOrDefault(x => x.Id == templateId);
-        _messageObject.TemplateContext = QuillHTMLContent.ToString();
-        _context.Templates.Update(_messageObject);
-        ComboBoxNew.Add(_messageObject);
-        await _context.SaveChangesAsync();
-        StateHasChanged();
-        //await OnInitializedAsync();
-    }
-
-    //public async void GetFromDB()
-    //{
-    //    _messageObject = _context.Templates.OrderByDescending(x => x.Id).FirstOrDefault();
-    //    string QuillContent = $@"{_messageObject.TemplateContext}";
-    //    await this.QuillHtml.LoadHTMLContent(QuillContent);
-    //    StateHasChanged();
-    //    await base.OnInitializedAsync();
-    //}
 
     protected override async Task OnInitializedAsync()
     {
-        ComboBoxNew = _context.Templates.ToList();
+        comboBox = _dbContext.Templates.ToList();
         await base.OnInitializedAsync();
     }
 
     public async void selectedValue(ChangeEventArgs args)
     {
         templateId = Convert.ToInt32(args.Value.ToString());
-        _messageObject = _context.Templates.FirstOrDefault(x => x.Id == Convert.ToInt32(args.Value.ToString()));
-        string QuillContent = $@"{_messageObject.TemplateContext}";
+        _emailDto = _dbContext.Templates.FirstOrDefault(x => x.Id == Convert.ToInt32(args.Value.ToString()));
+        string QuillContent = $@"{_emailDto.TemplateContext}";
         await this.QuillHtml.LoadHTMLContent(QuillContent);
         StateHasChanged();
-        //await OnInitializedAsync();
     }
 
     public async void DeleteFromDb()
     {
-        _context.Templates.Remove(_messageObject);
-        _context.SaveChanges();
+        _dbContext.Templates.Remove(_emailDto);
+        _dbContext.SaveChanges();
         await OnInitializedAsync();
     }
 }

@@ -61,9 +61,10 @@ namespace HeadAndFooter {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;tr id=&quot;m_6364587510727842495section_5&quot;&gt;&lt;td class=&quot;m_6364587510727842495blk_container m_6364587510727842495bmeHolder&quot; name=&quot;bmeFooter&quot; align=&quot;center&quot; valign=&quot;top&quot; width=&quot;100%&quot; bgcolor=&quot;#ffffff&quot; style=&quot;background-color:rgb(255,255,255);color:rgb(102,102,102)&quot;&gt;&lt;div id=&quot;m_6364587510727842495dv_10&quot;&gt;    
+        ///   Looks up a localized string similar to &lt;div id=&quot;m_6364587510727842495dv_10&quot;&gt;    
         ///    &lt;table width=&quot;600&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; border=&quot;0&quot; class=&quot;m_6364587510727842495blk&quot; name=&quot;blk_button&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td width=&quot;20&quot;&gt;&lt;/td&gt;&lt;td align=&quot;center&quot;&gt;    
-        ///    &lt;table class=&quot;m_63645875107278424 [rest of string was truncated]&quot;;.
+        ///    &lt;table class=&quot;m_6364587510727842495tblContainer&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; border=&quot;0&quot; width=&quot;100%&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td height=&quot;10&quot;&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;    
+        ///    &lt;table cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; border=&quot;0&quot; align=&quot;center&quot; style=&quot;border-collapse:separate&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td styl [rest of string was truncated]&quot;;.
         /// </summary>
         public static string ErrorMessageFooter {
             get {

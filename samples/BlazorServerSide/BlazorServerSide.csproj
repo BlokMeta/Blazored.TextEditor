@@ -9,6 +9,7 @@
     <Compile Remove="Migrations\20221123090512_EmailTemplates.Designer.cs" />
     <Compile Remove="Migrations\20221129092521_EmailMessageDbContext.cs" />
     <Compile Remove="Migrations\20221129092521_EmailMessageDbContext.Designer.cs" />
+    <Compile Remove="Models\TemplateResources.cs" />
   </ItemGroup>
 
   <ItemGroup>
